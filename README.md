@@ -15,8 +15,8 @@ This project demonstrates a pipeline for detecting license plates in images usin
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/FahimFBA/YOLOv8-License-Plate-Detection-and-Encryption.git
-   cd YOLOv8-License-Plate-Detection-and-Encryption
+   git clone https://github.com/FahimFBA/SafeLicensing.git
+   cd SafeLicensing
    ```
 
 2. Install the required dependencies:
