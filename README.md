@@ -19,12 +19,22 @@ This project demonstrates a pipeline for detecting license plates in images usin
    cd SafeLicensing
    ```
 
-2. Install the required dependencies:
+2. Install `ffmpeg` for video processing (Linux):
+   ```bash
+   sudo apt-get install ffmpeg
+   ```
+
+   or, for macOS:
+   ```bash
+   brew install ffmpeg
+   ```
+
+3. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Download the YOLOv8 weights file (`best.pt`) and place it in the root directory of the project. You can train your own model or use a pre-trained one. This repository already have our model from [SEncrypt](https://github.com/IsratIJK/SEncrypt) located in [best.pt](./best.pt) file.
+4. Download the YOLOv8 weights file (`best.pt`) and place it in the root directory of the project. You can train your own model or use a pre-trained one. This repository already have our model from [SEncrypt](https://github.com/IsratIJK/SEncrypt) located in [best.pt](./best.pt) file.
 
 ## Usage
 
