@@ -2,11 +2,8 @@ streamlit
 torch
 torchvision
 pillow
-opencv-python
+opencv-python-headless
 numpy
 requests
 ultralytics
 omegaconf
-opencv-python-headless
-moviepy==1.0.3
-imageio-ffmpeg
