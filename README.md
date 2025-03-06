@@ -52,6 +52,44 @@ This project demonstrates a pipeline for detecting license plates in images usin
 
 4. Download the encrypted image directly from the app.
 
+## Docker Usage
+
+You can also run this application using Docker. Follow these steps:
+
+1. Build the Docker image:
+   ```bash
+   docker build -t safelicensing .
+   ```
+
+2. Run the Docker container:
+   ```bash
+   docker run -d -p 8501:8501 --name safelicensing_container safelicensing
+   ```
+
+3. Check if the container is running:
+   ```bash
+   docker ps
+   ```
+   You should see a container named `safelicensing_container` in the list.
+
+4. View the container logs:
+   ```bash
+   docker logs safelicensing_container
+   ```
+   This will show you the Streamlit startup logs and any errors if they occur.
+
+5. Open the app in your browser by navigating to `http://localhost:8501`.
+
+If you encounter any issues:
+- Ensure that port 8501 is not being used by another application.
+- Check the container logs for any error messages.
+- If needed, you can stop and remove the container using:
+  ```bash
+  docker stop safelicensing_container
+  docker rm safelicensing_container
+  ```
+  Then, try running the container again.
+
 ## Workflow
 
 1. **License Plate Detection**:
@@ -99,4 +137,3 @@ For any queries, feel free to reach out:
 - **GitHub**: [FahimFBA](https://github.com/FahimFBA)
 
 - **Other Authors**: [Rafid Mehda](https://github.com/rafid29mehda), [Israt Jahan Khan](https://github.com/IsratIJK)
-
