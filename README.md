@@ -54,7 +54,9 @@ This project demonstrates a pipeline for detecting license plates in images usin
 
 ## Docker Usage
 
-You can also run this application using Docker. Follow these steps:
+You can run this application using Docker. There are two options: CPU-only and GPU-enabled.
+
+### CPU Version
 
 1. Build the Docker image:
    ```bash
@@ -66,29 +68,47 @@ You can also run this application using Docker. Follow these steps:
    docker run -d -p 8501:8501 --name safelicensing_container safelicensing
    ```
 
-3. Check if the container is running:
+### GPU Version (for NVIDIA GPU users)
+
+1. Ensure you have the NVIDIA Container Toolkit installed. If not, follow the [official installation guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html).
+
+2. Build the GPU-enabled Docker image:
+   ```bash
+   docker build -f Dockerfile.gpu -t safelicensing-gpu .
+   ```
+
+3. Run the GPU-enabled Docker container:
+   ```bash
+   docker run -d -p 8501:8501 --gpus all --name safelicensing_gpu_container safelicensing-gpu
+   ```
+
+### Common Steps
+
+4. Check if the container is running:
    ```bash
    docker ps
    ```
-   You should see a container named `safelicensing_container` in the list.
+   You should see a container named `safelicensing_container` or `safelicensing_gpu_container` in the list.
 
-4. View the container logs:
+5. View the container logs:
    ```bash
-   docker logs safelicensing_container
+   docker logs safelicensing_container  # or safelicensing_gpu_container for GPU version
    ```
    This will show you the Streamlit startup logs and any errors if they occur.
 
-5. Open the app in your browser by navigating to `http://localhost:8501`.
+6. Open the app in your browser by navigating to `http://localhost:8501`.
 
 If you encounter any issues:
 - Ensure that port 8501 is not being used by another application.
 - Check the container logs for any error messages.
 - If needed, you can stop and remove the container using:
   ```bash
-  docker stop safelicensing_container
-  docker rm safelicensing_container
+  docker stop safelicensing_container  # or safelicensing_gpu_container
+  docker rm safelicensing_container  # or safelicensing_gpu_container
   ```
   Then, try running the container again.
+
+Note: The GPU version requires an NVIDIA GPU and proper drivers. If you don't have a compatible GPU, use the CPU version instead.
 
 ## Workflow
 
